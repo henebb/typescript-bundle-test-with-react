@@ -1,6 +1,8 @@
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import liveServer from 'rollup-plugin-live-server';
 import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
 
 export default {
     external: ['react', 'react-dom'],
@@ -18,7 +20,12 @@ export default {
         },
     ],
     plugins: [
-        resolve(),
+        resolve({browser:true}),
+        commonjs(),
+
+        replace({
+            'process.env.NODE_ENV': JSON.stringify( 'development' )
+          }),
 
         // load files with existing source maps:
         sourcemaps(),
@@ -28,7 +35,7 @@ export default {
             root: './public',
             file: 'index.html',
             wait: 500,
-            open: true
+            open: false
         }),
     ]
 };
