@@ -27,7 +27,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
-    "json-server": "^0.16.1",
+    "json-server": "^0.17.1",
     "rollup": "^1.32.1",
     "rollup-plugin-live-server": "^1.0.3",
     "rollup-plugin-sourcemaps": "^0.5.0",
